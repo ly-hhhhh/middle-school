@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>南戲選課計算機</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+  
+  <div class="left-column">
+    <div class="card">
+      <h1>✨ 請開始你的選課 ✨</h1>
+      
+      <div class="subtitle-group">
+        <p class="main-sub">基於南大 113 學年度起修習者適用之課程地圖</p>
+        <p class="hint-sub">課程每年或有差異<br>若找不到，可至匿名箱留言ㄛ</p>
+      </div>
+
+      <div id="list-mode-section">
+        <select id="semesterSelect" onchange="updateMain()">
+          <option value="">1. 選擇類型</option>
+          <option value="教育基礎課程">教育基礎課程</option>
+          <option value="教育方法課程">教育方法課程</option>
+          <option value="教育實踐課程">教育實踐課程</option>
+        </select>
+        <select id="mainSelect" onchange="updateCourse()"><option value="">2. 選擇類別</option></select>
+        <select id="courseSelect"><option value="">3. 選擇課程</option></select>
+        <button onclick="addCourse()" class="btn-add">加入課程清單</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📚 修課明細</h2>
+      <div id="list-container" class="list-container"></div>
+    </div>
+  </div>
+
+  <div class="right-column">
+    <div class="card">
+      <h2>📊 學分統計</h2>
+      <div class="summary-dashboard">
+        <div class="stat-card">
+          <div class="card-title">教育基礎課程</div>
+          <div class="card-main"><b id="score-basic">0</b> / 7</div>
+        </div>
+        <div class="stat-card">
+          <div class="card-title">教育方法課程</div>
+          <div class="card-main"><b id="score-method">0</b> / 10</div>
+        </div>
+        <div class="stat-card">
+          <div class="card-title">教育實踐課程</div>
+          <div class="card-main"><b id="score-practice">0</b> / 9</div>
+        </div>
+        <div class="stat-card total">
+          <div class="card-title">已選總學分</div>
+          <div class="card-main"><b id="total" style="display:inline;">0</b> / 26</div>
+          <div id="total-status" class="card-sub">目標：符合各項最低標準</div>
+        </div>
+
+        <div class="footer-note">
+          有任何建議指教，歡迎到<a href="https://tellonym.me/ddca.cc/anything" target="_blank">匿名箱</a>留言<br>
+          我們不一定會聽 😻
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

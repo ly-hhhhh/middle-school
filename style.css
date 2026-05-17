@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&display=swap');
+
+body {
+  font-family: 'Noto Serif TC', "Songti TC", serif;
+  background-color: #f0f2f5;
+  color: #1e293b;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.main-wrapper {
+  display: flex;
+  max-width: 1100px;
+  width: 100%;
+  gap: 25px;
+  padding: 30px;
+  align-items: flex-start;
+}
+
+.left-column {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-column {
+  flex: 1;
+  position: sticky;
+  top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+h1 { font-size: 1.6rem; text-align: center; margin: 0 0 10px 0; font-weight: 900; }
+h2 { font-size: 1.2rem; margin-bottom: 20px; border-left: 5px solid #6366f1; padding-left: 12px; font-weight: 700; }
+
+.subtitle-group { text-align: center; margin-bottom: 25px; }
+.main-sub { margin: 0; font-weight: bold; color: #475569; font-size: 1.05rem; }
+.hint-sub { margin: 5px 0 0; font-size: 0.85rem; color: #64748b; line-height: 1.4; }
+
+select { width: 100%; padding: 12px 15px; margin-bottom: 12px; border: 1px solid #e2e8f0; border-radius: 12px; font-size: 1rem; font-family: inherit; background-color: white; box-sizing: border-box; }
+
+.btn-add { width: 100%; padding: 15px; border: none; border-radius: 12px; font-size: 1.05rem; font-weight: bold; cursor: pointer; transition: all 0.3s; color: white; font-family: inherit; background-color: #6366f1; }
+
+.list-container { max-height: 550px; overflow-y: auto; padding-right: 5px; }
+.semester-block { background: #f8fafc; padding: 18px; border-radius: 15px; margin-bottom: 15px; border: 1px solid #f1f5f9; }
+.semester-title { font-weight: bold; color: #475569; margin-bottom: 12px; font-size: 0.9rem; }
+
+ul { list-style: none; padding: 0; margin: 0; }
+li { display: flex; justify-content: space-between; align-items: center; background: white; padding: 10px 15px; margin-bottom: 8px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); font-size: 0.95rem; }
+.delete-btn { background: #fee2e2; color: #ef4444; border: none; padding: 5px 10px; border-radius: 8px; cursor: pointer; font-size: 0.8rem; }
+
+.summary-dashboard { display: flex; flex-direction: column; gap: 12px; }
+.stat-card { padding: 15px; background: #ffffff; border-radius: 15px; text-align: center; border: 1px solid #eef2f6; }
+.stat-card.total { background: #1e293b; color: white; border: none; margin-top: 5px; }
+
+.card-title { font-size: 0.8rem; color: #64748b; margin-bottom: 5px; }
+.card-sub { font-size: 0.75rem; margin-top: 5px; color: #94a3b8; }
+
+/* 針對深色卡片的調亮 */
+.stat-card.total .card-title { color: #D0D0D0 !important; font-weight: bold; }
+.stat-card.total .card-sub { color: #9393FF !important; font-size: 0.75rem; margin-top: 5px; }
+
+/* 讓學分數字與下方文字產生行距 */
+.total b {
+  color: #a5b4fc;
+  font-size: 1.8rem;
+  display: block;      
+  margin-bottom: 12px; 
+}
+
+.footer-note { margin-top: 20px; text-align: center; font-size: 0.8rem; color: #94a3b8; border-top: 1px dashed #e2e8f0; padding-top: 20px; line-height: 1.6; }
+.footer-note a { color: #6366f1; text-decoration: underline; margin: 0 4px; font-weight: bold; }
+
+@media (max-width: 850px) {
+  .main-wrapper { flex-direction: column; align-items: center; }
+  .right-column { position: static; width: 100%; }
+  .left-column { width: 100%; }
+}
